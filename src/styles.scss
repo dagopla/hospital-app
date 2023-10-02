@@ -1,1 +1,204 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: var(--font-family);
+}
+@layer components {
+  .apexcharts-tooltip {
+    @apply bg-white dark:bg-gray-700 text-gray-500 dark:text-gray-400 border-0 rounded-lg shadow-lg;
+  }
+
+  .apexcharts-tooltip .apexcharts-tooltip-title {
+    @apply py-2 px-4 bg-gray-100 dark:bg-gray-600 border-b border-gray-200 dark:border-gray-500;
+  }
+
+  .apexcharts-xaxistooltip {
+    @apply text-gray-500 border-0 bg-white dark:bg-gray-700 dark:text-gray-300 rounded-lg shadow-lg;
+  }
+
+  .apexcharts-tooltip .apexcharts-tooltip-text-y-value {
+    @apply dark:text-white;
+  }
+
+  .apexcharts-xaxistooltip-text {
+    @apply font-medium text-sm;
+  }
+
+  .apexcharts-xaxistooltip:before,
+  .apexcharts-xaxistooltip:after {
+    @apply border-0;
+  }
+
+  /* SVG map styles */
+  .svgMap-map-wrapper {
+    @apply bg-white;
+  }
+
+  .svgMap-map-image {
+    @apply dark:bg-gray-800;
+  }
+
+  .svgMap-map-controls-wrapper {
+    @apply shadow-none left-0 bottom-0 dark:bg-gray-800;
+  }
+
+  .svgMap-map-controls-zoom {
+    @apply dark:bg-gray-800;
+  }
+
+  .svgMap-map-wrapper .svgMap-control-button {
+    @apply rounded-lg border-solid border border-gray-300 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-600;
+  }
+
+  .svgMap-map-wrapper .svgMap-control-button.svgMap-zoom-button:after,
+  .svgMap-map-wrapper .svgMap-control-button.svgMap-zoom-button:before {
+    @apply dark:bg-gray-600 dark:hover:bg-gray-500;
+  }
+
+  .svgMap-map-wrapper .svgMap-control-button:first-child {
+    @apply mr-2;
+  }
+
+  .svgMap-tooltip {
+    @apply bg-white dark:bg-gray-700 shadow-lg rounded-lg border-0 text-left;
+  }
+
+  .svgMap-tooltip
+    .svgMap-tooltip-content-container
+    .svgMap-tooltip-flag-container {
+    @apply inline-block mr-2 text-left border-0 p-0;
+  }
+
+  .svgMap-tooltip
+    .svgMap-tooltip-content-container
+    .svgMap-tooltip-flag-container
+    .svgMap-tooltip-flag {
+    @apply inline-block border-0 h-4 p-0;
+  }
+
+  .svgMap-tooltip .svgMap-tooltip-title {
+    @apply inline-block pt-2 text-gray-900 dark:text-white font-semibold text-sm;
+  }
+
+  .svgMap-tooltip .svgMap-tooltip-content {
+    @apply mt-0;
+  }
+
+  .svgMap-tooltip .svgMap-tooltip-content table td {
+    @apply text-sm text-left text-gray-500 dark:text-gray-400 font-normal;
+  }
+
+  .svgMap-tooltip .svgMap-tooltip-content table td span {
+    @apply text-sm text-left text-gray-900 dark:text-white font-semibold;
+  }
+
+  .svgMap-tooltip .svgMap-tooltip-pointer {
+    @apply hidden;
+  }
+
+  .svgMap-map-wrapper .svgMap-country {
+    @apply dark:stroke-gray-800;
+  }
+
+  /* kanban styles */
+
+  .drag-card {
+    @apply opacity-100;
+    @apply rotate-6;
+  }
+
+  .ghost-card {
+    @apply bg-gray-100/40 dark:bg-gray-600/40;
+  }
+
+  /* calendar styles */
+
+  .fc .fc-toolbar {
+    @apply flex-row-reverse justify-end px-4;
+  }
+
+  .fc .fc-toolbar.fc-header-toolbar {
+    @apply mb-5;
+  }
+
+  .fc .fc-toolbar-title {
+    @apply text-lg text-gray-900 font-semibold;
+  }
+
+  .fc .fc-today-button {
+    @apply rounded-lg border border-gray-200 bg-white text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-2 focus:ring-primary-700 focus:text-primary-700;
+  }
+
+  .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
+    @apply mx-2;
+  }
+
+  .fc .fc-button-group .fc-prev-button,
+  .fc .fc-button-group .fc-next-button {
+    @apply bg-white border-0 text-gray-500 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 rounded inline-flex focus:bg-gray-100 focus:ring-1 focus:ring-gray-100 justify-center;
+  }
+
+  .fc .fc-scrollgrid {
+    @apply border-l-0 border-gray-200;
+  }
+
+  .fc .fc-daygrid-day-frame {
+    @apply border-gray-200;
+  }
+
+  .fc .fc-col-header-cell-cushion {
+    @apply py-3 text-base text-gray-900 font-semibold;
+  }
+
+  .fc-theme-standard th {
+    @apply border-0 border-b border-gray-200;
+  }
+
+  .fc-direction-ltr .fc-daygrid-event.fc-event-end {
+    @apply mr-2;
+  }
+
+  .fc-direction-ltr .fc-daygrid-event.fc-event-start {
+    @apply ml-2;
+  }
+
+  .fc .fc-event .fc-event-main {
+    @apply p-2 bg-primary-700 hover:bg-primary-800;
+  }
+
+  .fc .fc-h-event .fc-event-main-frame {
+    @apply text-xs font-semibold;
+  }
+
+  .fc .fc-daygrid-day-frame {
+    @apply hover:bg-gray-50 cursor-pointer;
+  }
+
+  .input-login {
+    @apply p-2 bg-transparent border-b-2 text-text rounded-md font-semibold
+        focus-visible:outline-none focus-visible:text-primary
+        focus-visible:border-secondary focus-visible:scale-105  w-[400px] transform duration-300;
+  }
+  .btn{
+    @apply bg-transparent hover:bg-primary hover:text-text text-secondtext border border-secondtext font-bold py-2 px-4 rounded;
+  }
+  .btn-primary{
+    @apply bg-primarycolor hover:bg-secondarycolor text-text font-bold py-2 px-4 rounded;
+  }
+
+  
+
+  
+
+  /* feed styles */
+
+  @media (min-width: 1280px) {
+    .feed-container {
+      height: calc(100vh - 4rem);
+    }
+  }
+}
+

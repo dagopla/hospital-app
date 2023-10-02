@@ -1,0 +1,63 @@
+<form class="flex flex-col gap-2 text-text p-20" id="loginform" autocomplete="off" (ngSubmit)="createUser()"
+    [formGroup]="registerForm" action="index.html">
+    <h3 class="text-text text-center text-2xl p-5">Register Now</h3><small class="text-secondtext">Create your account and enjoy</small>
+    <div class="grid place-content-center">
+        <div class="col-xs-12">
+            <input class="input-login" formControlName="name" type="text"  placeholder="Name">
+        </div>
+        <span class="text-red-500 max-w-[400px]" *ngIf="validField('name')">
+            {{ getFieldError("name") }}
+        </span>
+    </div>
+    <div class="form-group ">
+        <div class="col-xs-12">
+            <input class="input-login" formControlName="email" type="text"  placeholder="Email">
+        </div>
+        <span class="text-red-500 max-w-[400px]" *ngIf="validField('email')">
+            {{ getFieldError("email") }}
+        </span>
+    </div>
+    <div class="form-group ">
+        <div class="col-xs-12">
+            <input class="input-login" formControlName="password" type="password"  placeholder="Password">
+        </div>
+        <span class="text-red-500 max-w-[400px]" *ngIf="validField('password')">
+            {{ getFieldError("password") }}
+        </span>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <input class="input-login" formControlName="password2" type="password" 
+                placeholder="Confirm Password">
+            </div>
+            <span class="text-red-500 max-w-[400px]" *ngIf="validField('password2')">
+                {{ getFieldError("password2") }}
+            </span>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <div class="checkbox checkbox-primary p-t-0">
+                <input id="checkbox-signup" formControlName="terminos" type="checkbox">
+                <label for="checkbox-signup" class="text-secondarycolor"> I agree to all <a href="#">Terms</a></label>
+            </div>
+            <span class="text-red-500 max-w-[400px]" *ngIf="validField('terminos')">
+                {{ getFieldError("terminos") }}
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group text-center m-t-20">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" type="submit">Sign
+                Up</button>
+        </div>
+    </div>
+    <div class="form-group m-b-0">
+        <div class="col-sm-12 text-center">
+            <p>Already have an account? <a routerLink="../" class="text-md"><b class="text-secondarycolor">Sign In</b></a></p>
+        </div>
+    </div>
+</form>
+
+<!-- ============================================================== -->
+<!-- End Wrapper -->
