@@ -15,10 +15,10 @@ export class RegisterComponent implements OnInit {
 
   public formSubmited=false;
   public registerForm:FormGroup= this.fb.group({
-    name:['David', Validators.required],
-    email:['dagopla@gmail.com',[Validators.required,Validators.email]],
-    password:['1234',[Validators.required, Validators.minLength(6)]],
-    password2:['1234',Validators.required],
+    name:['user', Validators.required],
+    email:['user@gmail.com',[Validators.required,Validators.email]],
+    password:['Asd1234',[Validators.required, Validators.minLength(6)]],
+    password2:['Asd1234',Validators.required],
     terminos:[false,Validators.requiredTrue]
 
   },

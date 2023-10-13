@@ -178,8 +178,8 @@ body {
   }
 
   .input-login {
-    @apply p-2 bg-transparent border-b-2 text-text rounded-md font-semibold
-        focus-visible:outline-none focus-visible:text-primary
+    @apply p-2 bg-transparent border-b-2 text-secondtext rounded-md font-semibold
+        focus-visible:outline-none focus-visible:text-text
         focus-visible:border-secondary focus-visible:scale-105  w-[400px] transform duration-300;
   }
   .btn{

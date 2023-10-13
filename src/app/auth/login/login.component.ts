@@ -11,12 +11,12 @@ declare const google:any;
 })
 export class LoginComponent implements OnInit, AfterViewInit  {
   recoveryPassword:boolean=false;
-
+  registered:boolean=false;
   @ViewChild('googleSingIn') loginForm:ElementRef | undefined;
   public formSubmited=false;
   public registerForm= this.fb.group({
-    email:['admin@gmail.com',[Validators.required,Validators.email]],
-    password:['Asd,.-123',Validators.required],
+    email:['',[Validators.required,Validators.email]],
+    password:['',Validators.required],
     remember:[false]
 
   })
@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit, AfterViewInit  {
   }
 
   login(){
+    this.registered=false;
     this.userService.login(this.registerForm.value as LoginForm ).subscribe(
       resp=>{
         console.log(resp);
@@ -64,7 +65,7 @@ export class LoginComponent implements OnInit, AfterViewInit  {
         this.router.navigateByUrl('/');
       } ,
       err=>{
-        console.log(err);
+        this.registered=true;
       }
     );
     

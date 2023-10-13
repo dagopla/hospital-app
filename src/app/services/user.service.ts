@@ -79,4 +79,7 @@ export class UserService {
     localStorage.removeItem('token');
     this.router.navigateByUrl('/login');
   }
+  updateFile(file:FormData){
+    return this.http.put(`${baseUrl}/uploads/user/${this.uid}`,file,this.headers);
+  }
 }

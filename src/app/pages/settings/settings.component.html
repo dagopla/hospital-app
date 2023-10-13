@@ -1,28 +1,8 @@
-<div class="grid grid-cols-1 p-0 xl:grid-cols-3 xl:gap-4 ">
+<div class="grid grid-cols-1 p-0">
 
     <!-- Right Content -->
     <div class="col-span-full xl:col-auto">
-        <div class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2  sm:p-6 ">
-            <div class="items-center sm:flex xl:block 2xl:flex sm:space-x-4 xl:space-x-0 2xl:space-x-4">
-                <div>
-                    <h3 class="mb-1 text-xl font-bold text-gray-900 xt-white">Profile picture</h3>
-                    <img [src]="user.imgUser" alt="">
-                    <input type="file" >
-                    <div class="mb-4 text-sm text-gray-500 xt-gray-400">
-                        JPG, GIF or PNG. Max size of 800K
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 -primary-600 ver:bg-primary-700 cus:ring-primary-800">
-                            <svg class="w-4 h-4 mr-2 -ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z"></path><path d="M9 13h2v5a1 1 0 11-2 0v-5z"></path></svg>
-                            Upload picture
-                        </button>
-                        <button type="button" class="py-2 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 cus:ring-gray-700 xt-gray-400 rder-gray-600  ver:bg-gray-700">
-                            Delete
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
        
         
        
@@ -31,6 +11,30 @@
         <div class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2  sm:p-6 ">
             <h3 class="mb-4 text-xl font-semibold xt-white">General information</h3>
             <form action="#" [formGroup]="perfilForm" (submit)="updateUser()">
+                <div class="p-4 mb-4 bg-white xl:w-1/2 border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2  sm:p-6 ">
+                    <div class="items-center sm:flex xl:block 2xl:flex sm:space-x-4 xl:space-x-0 2xl:space-x-4">
+                        <div>
+                            <h3 class="mb-1 text-xl font-bold text-gray-900 xt-white">Profile picture</h3>
+                            <img class="max-w-[400px] mx-h-[600px]" [src]="user.imgUser" alt="">
+                            <input (change)="onFileSelected($event)" type="file" id="file" formControlName="file" 
+                                class="input-secondary mb-2 text-sm text-slate-500
+                        file:bg-gray-300 hover:cursor-pointer file:rounded-lg file:font-semibold file:border-none file:text-base hover:file:bg-slate-300 hover:file:text-black/70" accept="image/*, video/*" />
+                            <br>
+                            <div class="mb-4 text-sm text-gray-500 xt-gray-400">
+                                JPG, GIF or PNG. Max size of 800K
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 -primary-600 ver:bg-primary-700 cus:ring-primary-800">
+                                    <svg class="w-4 h-4 mr-2 -ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z"></path><path d="M9 13h2v5a1 1 0 11-2 0v-5z"></path></svg>
+                                    Upload picture
+                                </button>
+                                <button type="button" class="py-2 px-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 cus:ring-gray-700 xt-gray-400 rder-gray-600  ver:bg-gray-700">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="grid grid-cols-6 gap-6">
                     <div class="col-span-6 sm:col-span-3">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 xt-white"> Name</label>

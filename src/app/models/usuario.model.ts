@@ -14,7 +14,7 @@ export class User {
     public name: string;
     public email: string;
     private password?: string;
-    private img?: string;
+    public img?: string;
     public role?: string;
     private google?: boolean;
     public id?: string;
