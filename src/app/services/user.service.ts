@@ -5,7 +5,7 @@ import { LoginForm } from '../auth/interfaces/login-form.interface';
 import { catchError, map, of, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/usuario.model';
-import { environment } from 'src/environments/environment.dev';
+import { environment } from 'src/environments/environment';
 
 const baseUrl=environment.baseUrl;
 
