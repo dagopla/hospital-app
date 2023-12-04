@@ -1,6 +1,7 @@
 import { Component, ElementRef, Host, HostListener, OnInit, ViewChild } from '@angular/core';
 import { User } from 'src/app/models/usuario.model';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,9 +17,13 @@ export class HeaderComponent implements OnInit{
       this.expandProfile=false;
     }
   }
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,private router:Router) { }
   ngOnInit(): void {
     this.user=this.userService.user
   }
   expandProfile:boolean=false;
+  logout(){
+    this.userService.logout();
+    this.router.navigateByUrl('/auth/login');
+  }
 }

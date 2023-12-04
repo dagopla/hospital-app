@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/usuario.model';
 import { UserService } from 'src/app/services/user.service';
 
@@ -20,15 +20,17 @@ export class SettingsComponent implements OnInit{
       name:[this.user.name, Validators.required],
       email:[this.user.email,[Validators.required,Validators.email]],
       file: [null],
-    })
+    });
+    console.log(this.user);
+    
   }
   updateUser(){
     console.log(this.perfilForm.value);
     this.userService.updateUser(this.perfilForm.value).subscribe((res:any)=>{
       console.log(res);
       
-      this.user.name=res.user.dataValues.name;
-      this.user.email=res.user.dataValues.email;
+      this.user.name=res.name;
+      this.user.email=res.email;
       if(!this.perfilForm.value.file)return
       this.loadVideoToPresenter();
     }
@@ -60,6 +62,9 @@ export class SettingsComponent implements OnInit{
     this.userService.updateFile(formData).subscribe((resp:any)=>{
       console.log(resp.nombreArchivo);
       this.user.img=resp.nombreArchivo;
+      this.userService.getActualUser().subscribe((res:any)=>{
+        this.userService.user=res;
+      })
     });
   }
 }

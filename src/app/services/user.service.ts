@@ -82,4 +82,11 @@ export class UserService {
   updateFile(file:FormData){
     return this.http.put(`${baseUrl}/uploads/user/${this.uid}`,file,this.headers);
   }
+  getActualUser(){
+    return this.http.get<any>(`${baseUrl}/users/${this.uid}`,this.headers)
+    .pipe(
+      map(resp=>resp.user)
+    );
+  }
+
 }
